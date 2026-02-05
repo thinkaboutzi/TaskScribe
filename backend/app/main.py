@@ -22,6 +22,6 @@ app.add_middleware(
 async def options_handler(path: str, request: Request):
     return Response(status_code=200)
 
-app.include_router(users.router, prefix="/users", tags=["users"])
-app.include_router(tasks.router, prefix="/tasks", tags=["tasks"])
-app.include_router(extract.router, prefix="/extract", tags=["extract"])
+app.include_router(users.router, tags=["users"])
+app.include_router(tasks.router, tags=["tasks"])
+app.include_router(extract.router, tags=["extract"])
