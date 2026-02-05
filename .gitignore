@@ -1,16 +1,47 @@
-# Python cache
+# ================== PYTHON / FASTAPI ==================
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-
-# Virtual environment
-venv/
-.env/
-
-# Database
+*.py[cod]
+*.sqlite3
 *.db
 
-# OS junk
+# virtual envs
+venv/
+.venv/
+env/
+
+# env files
+.env
+.env.*
+
+# ================== NODE / REACT ==================
+node_modules/
+frontend/node_modules/
+
+# build outputs
+build/
+dist/
+frontend/build/
+frontend/dist/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# lock files you SHOULD NOT push
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ================== OS / EDITOR JUNK ==================
 .DS_Store
 Thumbs.db
+.vscode/
+.idea/
+
+# ================== TEST / COVERAGE ==================
+coverage/
+.pytest_cache/
+
+# ================== MISC ==================
+*.log
