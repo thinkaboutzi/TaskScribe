@@ -61,6 +61,59 @@ body::before {
   box-shadow: 0 20px 50px rgba(4, 10, 20, 0.6);
 }
 
+.glass-hover {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  --hx: 50%;
+  --hy: 50%;
+  --hover: 0;
+}
+
+.glass-hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      220px circle at var(--hx) var(--hy),
+      rgba(111, 140, 255, calc(0.028 * var(--hover))),
+      rgba(111, 140, 255, 0)
+    ),
+    radial-gradient(
+      420px circle at var(--hx) var(--hy),
+      rgba(124, 92, 255, calc(0.03 * var(--hover))),
+      rgba(124, 92, 255, 0)
+    ),
+    radial-gradient(
+      620px circle at var(--hx) var(--hy),
+      rgba(90, 120, 210, calc(0.02 * var(--hover))),
+      rgba(90, 120, 210, 0)
+    );
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.glass-hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(120, 140, 255, 0.03),
+    rgba(118, 138, 255, 0)
+  );
+  opacity: calc(0.1 * var(--hover));
+  transform: translate3d(
+    calc((var(--hx) - 50%) * 0.1),
+    calc((var(--hy) - 50%) * 0.1),
+    0
+  );
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
 .auth-card {
   padding: 36px 32px;
 }

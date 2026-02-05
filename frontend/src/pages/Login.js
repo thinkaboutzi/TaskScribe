@@ -1,10 +1,13 @@
 import { useState } from "react";
 import API from "../api";
 import { useNavigate, Link } from "react-router-dom";
+import useGlassHover from "../hooks/useGlassHover";
 
 export default function Login() {
   const [data, setData] = useState({ username: "", password: "" });
   const navigate = useNavigate();
+
+  useGlassHover();
 
   const login = async () => {
     const res = await API.post("/users/login", data);
@@ -15,7 +18,7 @@ export default function Login() {
   return (
     <div className="auth-page">
       <div className="auth-shell">
-        <div className="auth-card glass-card">
+        <div className="auth-card glass-card glass-hover">
           <div className="auth-brand">
             <span className="brand-mark" />
             <div>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import API from "../api";
+import useGlassHover from "../hooks/useGlassHover";
 
 export default function Dashboard() {
   const [text, setText] = useState("");
@@ -13,6 +14,8 @@ export default function Dashboard() {
   const [actionLoading, setActionLoading] = useState({});
   const [deleteTarget, setDeleteTarget] = useState(null);
   const [toasts, setToasts] = useState([]);
+
+  useGlassHover([tasks, deleteTarget]);
 
   const formatTimestamp = (value) => {
     if (!value) return "—";
@@ -176,7 +179,7 @@ export default function Dashboard() {
           </div>
 
           {/* Extract Section */}
-          <div className="glass-card p-4 mb-4">
+          <div className="glass-card glass-hover p-4 mb-4">
             <div className="section-title">
               <h5>Paste Meeting Transcript</h5>
               <span>Auto-detect action items in seconds.</span>
@@ -222,7 +225,7 @@ export default function Dashboard() {
               <p className="text-muted mb-0">Newest tasks appear first.</p>
             </div>
 
-            <div className="task-filters glass-card p-3">
+            <div className="task-filters glass-card glass-hover p-3">
               <div className="filter-group">
                 <span className="filter-label">Status</span>
                 <div className="btn-group" role="group" aria-label="Status filter">
@@ -275,14 +278,14 @@ export default function Dashboard() {
           </div>
 
         {getSortedFilteredTasks().length === 0 ? (
-          <div className="empty-state glass-card">
+          <div className="empty-state glass-card glass-hover">
             <div className="empty-icon">📄</div>
             <h4>No tasks yet</h4>
             <p>Paste a meeting transcript to generate tasks.</p>
           </div>
         ) : (
           getSortedFilteredTasks().map((t) => (
-            <div className="glass-card task-card p-3 mb-3" key={t.id}>
+            <div className="glass-card glass-hover task-card p-3 mb-3" key={t.id}>
               {editing === t.id ? (
               <>
                 <input
@@ -438,7 +441,7 @@ export default function Dashboard() {
         <>
           <div className="modal show modal-overlay" role="dialog" aria-modal="true">
             <div className="modal-dialog modal-dialog-centered">
-              <div className="modal-content glass-card">
+              <div className="modal-content glass-card glass-hover">
                 <div className="modal-header">
                   <h5 className="modal-title">Delete task</h5>
                   <button
