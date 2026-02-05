@@ -1,22 +1,23 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .database import engine, Base
-from .routes import extract, tasks, users
 
-Base.metadata.create_all(bind=engine)
+from app.routes import users, tasks, extract
 
-app = FastAPI(title="TaskScribe API")
+app = FastAPI()
 
-# ----------- ADD THIS -----------
+# 🔥 CORS MUST COME FIRST
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # later you can restrict to localhost:3000
+    allow_origins=[
+        "http://localhost:3000",
+        "https://taskscribe.vercel.app",  # your Vercel domain
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-# --------------------------------
 
-app.include_router(users.router)
-app.include_router(extract.router)
-app.include_router(tasks.router)
+# THEN include routers
+app.include_router(users.router, prefix="/users", tags=["users"])
+app.include_router(tasks.router, prefix="/tasks", tags=["tasks"])
+app.include_router(extract.router, prefix="/extract", tags=["extract"])
